@@ -39,7 +39,7 @@ public class movePlayer : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.right * -moveSpeed * Time.deltaTime;
+            transform.position += Vector3.right * -moveSpeed * Time.deltaTime; // wow
 
         }
 
