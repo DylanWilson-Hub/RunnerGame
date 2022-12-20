@@ -39,7 +39,7 @@ public class movePlayer : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.right * -moveSpeed * Time.deltaTime; //1800
+            transform.position += Vector3.right * -moveSpeed * Time.deltaTime; //1800steamers
 
         }
 
