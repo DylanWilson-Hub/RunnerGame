@@ -20,7 +20,6 @@ public class movePlayer : MonoBehaviour
 
     public void Update()
     {
-        print(isGrounded.ToString());
     }
     public void FixedUpdate()
     {
@@ -28,7 +27,8 @@ public class movePlayer : MonoBehaviour
         {
             isGrounded = false;
         }
-        else
+
+        if (transform.position.y.ToString().Contains("-2.8") || transform.position.y.ToString().Contains("-1.6864") || transform.position.y.ToString().Contains("-0.5564"))
         {
             isGrounded = true;
         }
