@@ -14,6 +14,7 @@ public class movePlayer : MonoBehaviour
     }
 
     // Update is called once per frame
+
     public float moveSpeed;
     public Vector2 jumpHeight;
     bool isGrounded = true;
@@ -32,17 +33,6 @@ public class movePlayer : MonoBehaviour
         {
             isGrounded = true;
         }
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.position += Vector3.right * moveSpeed * Time.deltaTime;
-
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.position += Vector3.right * -moveSpeed * Time.deltaTime; //1800steamers
-
-        }
-
         if (Input.GetKey(KeyCode.W) && isGrounded)
         {
             GetComponent<Rigidbody2D>().AddForce(jumpHeight, ForceMode2D.Impulse);
@@ -52,6 +42,16 @@ public class movePlayer : MonoBehaviour
             if (transform.position.y.ToString().Contains("-2.8"))
                 return;
             transform.position += Vector3.up * -moveSpeed * Time.deltaTime;
+        }
+
+
+        if (Input.GetKey(KeyCode.D) && transform.position.x <= -7)
+        {
+            transform.position += Vector3.right * moveSpeed * Time.deltaTime; //1800steamers
+
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
 
         }
     }
