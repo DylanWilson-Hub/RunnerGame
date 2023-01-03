@@ -24,10 +24,12 @@ public class movePath : MonoBehaviour
     }
     public void FixedUpdate()
     {
+
+        
         if (Input.GetKey(KeyCode.D))
-            transform.position += Vector3.right * -moveSpeed / 2 * Time.deltaTime; //1800steamers
+            transform.position += Vector3.right * (-moveSpeed - CreateObstacles.speedRate) / 2 * Time.deltaTime; //1800steamers
         else
-            transform.position += Vector3.right * (-moveSpeed / 4) * Time.deltaTime; //1800steamers
+            transform.position += Vector3.right * ((-moveSpeed - CreateObstacles.speedRate) / 4) * Time.deltaTime; //1800steamers
 
     }
 }

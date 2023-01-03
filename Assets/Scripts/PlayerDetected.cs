@@ -14,21 +14,25 @@ public class PlayerDetected : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
 
+        if(collision.tag == "Player")
+        {
+            print("Game Over");
+        }
+
+
         if (collision.tag == "Obstacle")
         {
             Destroy(collision.gameObject,1.0f);
-
             //print("here");
             if (blockCount > 1 && rand.Next(0, 4) != 0)
             {
-                Instantiate(twoBlock, new Vector3(11, (float)-2.57, 0), Quaternion.identity);
+                Instantiate(twoBlock, new Vector3(11, (float)-2.7, 0), Quaternion.identity);
                 blockCount = 0;
             }
             else
             {
-                Instantiate(oneBlock, new Vector3(11, -3, 0), Quaternion.identity);
+                Instantiate(oneBlock, new Vector3((float)11, -3, 0), Quaternion.identity);
                 blockCount++;
-
             }
         }
     }
