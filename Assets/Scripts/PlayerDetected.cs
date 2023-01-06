@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using SystemRandom = System.Random;
+using UnitySceneManager = UnityEngine.SceneManagement.SceneManager;
 
 public class PlayerDetected : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class PlayerDetected : MonoBehaviour
 
         if(collision.tag == "Player")
         {
-            print("Game Over");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GameOver");
         }
 
 
